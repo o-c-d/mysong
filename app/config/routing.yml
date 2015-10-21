@@ -1,3 +1,6 @@
+imports:
+    resource: sonata/admin_routing.yml
+
 # AcmeDemoBundle routes (to be removed)
 _demo:
     resource: "@AcmeDemoBundle/Resources/config/routing.yml"

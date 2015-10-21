@@ -1,0 +1,4 @@
+# app/config/sonata/admin_routing.yml
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin

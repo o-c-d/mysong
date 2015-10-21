@@ -40,3 +40,29 @@ for a guide to running the tests.
 
 Thanks to
 [everyone who has contributed](https://github.com/symfony-cmf/standard-edition/contributors) already.
+
+
+
+## INSTALL CMF
+
+$ composer create-project symfony-cmf/standard-edition symfony-cmf "~1.2"
+
+> database_driver: pdo_mysql
+> database_path: null
+
+php app/console doctrine:database:create
+php app/console doctrine:phpcr:init:dbal
+php app/console doctrine:phpcr:repository:init
+php app/console doctrine:phpcr:fixtures:load
+
+php app/console --env=prod assetic:dump
+php app/console assets:install
+
+## Clear cache
+php app/console cache:clear --no-warmup
+
+## INSTALL SONATA ADMIN : https://sonata-project.org/bundles/admin/2-3/doc/getting_started/installation.html
+
+composer require sonata-project/admin-bundle "2.3.*"
+composer require sonata-project/doctrine-orm-admin-bundle "2.3.*"
+bower install ./vendor/sonata-project/admin-bundle/bower.json
