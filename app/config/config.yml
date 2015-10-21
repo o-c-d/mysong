@@ -2,10 +2,11 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: sonata/admin_config.yml }
+    - { resource: sonata/user_config.yml }
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -91,9 +92,6 @@ cmf_routing:
 # Menu Configuration
 knp_menu:
     twig: true
-
-sonata_block:
-    default_contexts: [cms]
 
 # Cmf Create Configuration
 fos_rest:

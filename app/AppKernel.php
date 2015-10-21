@@ -42,7 +42,12 @@ class AppKernel extends Kernel
             // Sonata AdminBundle
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
-
+            // Sonata EasyExtendsBundle
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            // SonataUserBundle
+            new FOS\UserBundle\FOSUserBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             ##
 
             // Remove this Bundle when using the SE as the basis for a new project
