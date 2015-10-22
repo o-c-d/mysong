@@ -2,13 +2,26 @@
 
 sonata_user:
     security_acl: true
-    manager_type: orm # can be orm or mongodb
+    manager_type: orm
+    profile:  # Profile Form (firstname, lastname, etc ...)
+        form:
+            type:               sonata_user_profile
+            handler:            sonata.user.profile.form.handler.default
+            name:               sonata_user_profile_form
+            validation_groups:  [Profile]
 
 sonata_block:
     blocks:
         #...
         sonata.user.block.menu:    # used to display the menu in profile pages
         sonata.user.block.account: # used to display menu option (login option)
+
+        # Builtin Block
+        sonata.block.service.text:
+        sonata.block.service.container:
+        sonata.block.service.rss:
+        sonata.block.service.menu:
+        sonata.block.service.template:
 
 # app/config/security.yml
 security:
@@ -25,10 +38,16 @@ fos_user:
     firewall_name:  main
     user_class:     Application\Sonata\UserBundle\Entity\User
 
-
     group:
         group_class:   Application\Sonata\UserBundle\Entity\Group
         group_manager: sonata.user.orm.group_manager                    # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
+
+    profile:  # Authentication Form
+        form:
+            type:               fos_user_profile
+            handler:            fos_user.profile.form.handler.default
+            name:               fos_user_profile_form
+            validation_groups:  [Authentication] # Please note, this is not the default value
 
     service:
         user_manager: sonata.user.orm.user_manager                      # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
@@ -44,3 +63,7 @@ doctrine:
                     FOSUserBundle: ~
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
+
+mopa_bootstrap:
+    form: ~  # Adds twig form theme  support
+    #menu: ~  # enables twig helpers for menu
