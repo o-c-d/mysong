@@ -22,20 +22,6 @@ If you plan to use mysql :
 > database_path: null
 ```
 
-3. Initiate database and generate assets
-
-```
-php app/console doctrine:database:create
-php app/console doctrine:phpcr:init:dbal
-php app/console doctrine:phpcr:repository:init
-php app/console doctrine:phpcr:fixtures:load
-php app/console doctrine:schema:update --force
-php app/console doctrine:fixtures:load
-php app/console assets:install --symlink
-php app/console --env=prod assetic:dump
-php app/console cache:clear --no-warmup
-```
-
 4. URLs
 
 * SonataAdmin : /admin
