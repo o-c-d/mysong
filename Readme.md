@@ -8,16 +8,21 @@
 git clone https://github.com/loispuig/mysong.git mysong && cd mysong
 ```
 
-2. Answer the setup questions
+2. Install packages using composer
 
-If you plan to use mysql
+```
+composer self-update && composer install
+```
+
+Then answer the setup questions.
+If you plan to use mysql :
 
 ```
 > database_driver: pdo_mysql
 > database_path: null
 ```
 
-3. Initiate the project
+3. Initiate database and generate assets
 
 ```
 php app/console doctrine:database:create
