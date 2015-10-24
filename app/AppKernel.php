@@ -25,19 +25,14 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
-
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
-
             new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
-
-            ##
 
             // Sonata AdminBundle
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
@@ -48,13 +43,18 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-            ##
 
             // MopaBootstrapBundle
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             #new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             #new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             #new Craue\FormFlowBundle\CraueFormFlowBundle(),
+
+            // CMFAdmin
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
 
             // Remove this Bundle when using the SE as the basis for a new project
             new Acme\DemoBundle\AcmeDemoBundle(),
