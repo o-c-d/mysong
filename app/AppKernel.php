@@ -44,6 +44,11 @@ class AppKernel extends Kernel
             // Sonata EasyExtendsBundle
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
 
+			// CMF Admin
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+			
             // Sonata AdminBundle
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),

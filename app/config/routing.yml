@@ -6,6 +6,14 @@ _demo:
 _cmf_create:
     resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"
 
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+cmf_tree:
+    resource: .
+    type: 'cmf_tree'
+
+
 #_admin:
 #    resource: 'sonata/admin_routing.yml'
 #    resource: 'sonata/user_routing.yml'

@@ -22,7 +22,33 @@ sonata_admin:
             - { position: left, type: sonata.block.service.rss, settings: { title: Sonata Project's Feeds, url: https://sonata-project.org/blog/archive.rss, template: SonataAdminBundle:Block:block_rss_dashboard.html.twig }}
 
             - { position: right, type: sonata.admin.block.admin_list}
+            #- { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
 #
+
+
+sonata_doctrine_phpcr_admin:
+    document_tree:
+        Doctrine\ODM\PHPCR\Document\Generic:
+            valid_children:
+                - all
+        # if you are using the SimpleCmsBundle, enable the Page as well
+        # Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
+        #     valid_children:
+        #         - all
+        Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent:
+            valid_children:
+                - all
+        Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
+            valid_children:
+                - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
+                - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute
+        Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:
+            valid_children: []
+        Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
+#
+
 
 
 sonata_block:
@@ -30,8 +56,18 @@ sonata_block:
     blocks:
         # ...
         # enable the SonataAdminBundle block
+        sonata.admin.block.stats:
+            contexts:   [admin]
         sonata.admin.block.admin_list:
-            contexts: [admin]
+            contexts:   [admin]
+        sonata.admin.block.search_result:
+            contexts:   [admin]
+
+        # CMF Admin
+        sonata_admin_doctrine_phpcr.tree_block:
+            settings:
+                id: '/cms'
+            contexts:   [admin]
         # ...
 #
 
