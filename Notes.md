@@ -55,8 +55,8 @@ php app/console doctrine:phpcr:init:dbal
 php app/console doctrine:phpcr:repository:init
 php app/console doctrine:phpcr:fixtures:load
 
+php app/console assets:install --symlink
 php app/console --env=prod assetic:dump
-php app/console assets:install
 
 ## Clear cache
 php app/console cache:clear --no-warmup
