@@ -37,13 +37,18 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
 
-            ##
+            ## Fin du CMF Standard Edition
+			
+			## Mysong
+			
+            // Sonata EasyExtendsBundle
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
 
             // Sonata AdminBundle
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
-            // Sonata EasyExtendsBundle
-            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
+			
             // SonataUserBundle
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),

@@ -1,8 +1,9 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: sonata/admin_config.yml }
-    - { resource: sonata/user_config.yml }
+    - { resource: sonata/sonata_block.yml }
+    - { resource: sonata/sonata_user.yml }
+    - { resource: sonata/sonata_admin.yml }
 
 framework:
     #esi:             ~

@@ -1,0 +1,13 @@
+
+sonata_block:
+    blocks:
+        # Builtin Blocks
+        sonata.block.service.text:
+        sonata.block.service.container:
+        sonata.block.service.rss:
+        sonata.block.service.menu:
+        sonata.block.service.template:
+        #...
+#
+
+
