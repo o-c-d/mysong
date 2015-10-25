@@ -14,81 +14,50 @@ cmf_tree:
     type: 'cmf_tree'
 
 
-#_admin:
-#    resource: 'sonata/admin_routing.yml'
-#    resource: 'sonata/user_routing.yml'
 
-#fos_js_routing:
-#    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
-
-#fos_user_security:
-#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-
-#fos_user_resetting:
-#    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-#    prefix: /resetting
-
-#fos_user_profile:
-#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-#    prefix: /profile
-
-#fos_user_register:
-#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-#    prefix: /register
-
-#fos_user_change_password:
-#    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-#    prefix: /profile
-
-admin_area:
-    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
-    prefix: /admin
 
 sonata_user_security:
     resource: "@SonataUserBundle/Resources/config/routing/sonata_security_1.xml"
-
+    prefix: /user
 sonata_user_resetting:
     resource: "@SonataUserBundle/Resources/config/routing/sonata_resetting_1.xml"
-    prefix: /resetting
-
+    prefix: /user/resetting
 sonata_user_profile:
     resource: "@SonataUserBundle/Resources/config/routing/sonata_profile_1.xml"
-    prefix: /profile
-
+    prefix: /user/profile
 sonata_user_register:
     resource: "@SonataUserBundle/Resources/config/routing/sonata_registration_1.xml"
-    prefix: /register
-
+    prefix: /user/register
 sonata_user_change_password:
     resource: "@SonataUserBundle/Resources/config/routing/sonata_change_password_1.xml"
-    prefix: /profile
+    prefix: /user/profile
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /user/connect
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /user/connect
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /user/connect
+facebook_login:
+    path: /user/connect/check-facebook
+github_login:
+    path: /user/connect/check-github
+google_login:
+    path: /user/connect/check-google
+twitter_login:
+    path: /user/connect/check-twitter
 
-sonata_user:
+
+sonata_user_admin_security:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
     prefix: /admin
-
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
 _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
 
-#hwi_oauth_connect:
-#resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
-#prefix: /user/connect
-
-#hwi_oauth_redirect:
-#resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-#prefix: /user/connect
-
-#hwi_oauth_login:
-#resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-#prefix: /user/connect
-
-#facebook_login:
-#path: /user/connect/check-facebook
-#github_login:
-#path: /user/connect/check-github
-#google_login:
-#path: /user/connect/check-google
-#twitter_login:
-#path: /user/connect/check-twitter

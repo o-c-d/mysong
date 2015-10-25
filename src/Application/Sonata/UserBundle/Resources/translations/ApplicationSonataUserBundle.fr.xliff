@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="fr" target-language="fr" datatype="plaintext"  original="file.ext">
+        <body>
+        <trans-unit id=" title_social_registration ">
+            <source>Connexion</source>
+            <target>Connexion</target>
+        </trans-unit>
+        <trans-unit id="connect_with ">
+            <source>connect with </source>
+            <target>se connecter avec</target>
+        </trans-unit>
+        <trans-unit id="google">
+            <source>Google</source>
+            <target>Google</target>
+        </trans-unit>
+        <trans-unit id="facebook">
+            <source>Facebook</source>
+            <target>Facebook</target>
+        </trans-unit>
+        <trans-unit id="twitter">
+            <source>Twitter</source>
+            <target>Twitter</target>
+        </trans-unit>
+        <trans-unit id="github">
+            <source>Github</source>
+            <target>Github</target>
+        </trans-unit>
+        <trans-unit id="title_user_registration">
+            <source>Create account</source>
+            <target>Créer un compte</target>
+        </trans-unit>
+        <trans-unit id="">
+            <source> </source>
+            <target> </target>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>

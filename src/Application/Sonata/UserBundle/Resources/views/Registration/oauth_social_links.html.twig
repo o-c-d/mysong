@@ -1,0 +1,15 @@
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h2 class="panel-title">{{ 'title_social_registration'|trans({}, 'ApplicationSonataUserBundle') }}</h2>
+    </div>
+    <div class="panel-body">
+		<div class="oauth_social_links">
+			<ul class="nav nav-bar">
+				{% if google_client_id != '-' %}<li><a href="{{ hwi_oauth_login_url('google') }}" title="{{ 'connect_with' | trans({}, 'ApplicationSonataUserBundle') }} {{ 'google' | trans({}, 'ApplicationSonataUserBundle') }}"><i class="fa fa-3x fa-google-plus on fa-square-o">Google</i></a></li>{% endif %}
+				{% if facebook_client_id != '-' %}<li><a href="{{ hwi_oauth_login_url('facebook') }}" title="{{ 'connect_with' | trans({}, 'ApplicationSonataUserBundle') }} {{ 'facebook' | trans({}, 'ApplicationSonataUserBundle') }}"><i class="fa fa-3x fa-facebook-f on fa-square-o">FaceBook</i></a></li>{% endif %}
+				{% if twitter_client_id != '-' %}<li><a href="{{ hwi_oauth_login_url('twitter') }}" title="{{ 'connect_with' | trans({}, 'ApplicationSonataUserBundle') }} {{ 'twitter' | trans({}, 'ApplicationSonataUserBundle') }}"><i class="fa fa-3x  fa-twitter on fa-square-o">Twitter</i></a></li>{% endif %}
+				{% if github_client_id != '-' %}<li><a href="{{ hwi_oauth_login_url('github') }}" title="{{ 'connect_with' | trans({}, 'ApplicationSonataUserBundle') }} {{ 'github' | trans({}, 'ApplicationSonataUserBundle') }}"><i class="fa fa-3x fa-github on fa-square-o">Github</i></a></li>{% endif %}
+			</ul>
+		</div>
+    </div>
+</div>

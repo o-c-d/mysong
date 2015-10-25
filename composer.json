@@ -38,6 +38,7 @@
         "sonata-project/doctrine-orm-admin-bundle": "^2.3",
         "sonata-project/easy-extends-bundle": "^2.1",
         "sonata-project/user-bundle": "^2.2",
+		"hwi/oauth-bundle": "0.4.*@dev",
         "mopa/bootstrap-bundle": "^2.3",
         "twbs/bootstrap": "^3.3"
     },
