@@ -44,7 +44,7 @@ class LoadMysongCoreData implements FixtureInterface
         Fixtures::load(array(__DIR__.'/../../Resources/data/pages.yml'), $manager);
 
         // add menu item for user login
-        $loginMenuNode = new MenuNode('login');
+        $loginMenuNode = new MenuNode('user_login');
         $loginMenuNode->setLabel('User Login');
         $loginMenuNode->setParentDocument($menuRoot);
         $loginMenuNode->setRoute('fos_user_security_login');
@@ -52,7 +52,7 @@ class LoadMysongCoreData implements FixtureInterface
         $manager->persist($loginMenuNode);
 
         // add menu item for admin login
-        $loginMenuNode = new MenuNode('login');
+        $loginMenuNode = new MenuNode('admin_login');
         $loginMenuNode->setLabel('Admin Login');
         $loginMenuNode->setParentDocument($menuRoot);
         $loginMenuNode->setRoute('sonata_user_admin_security_login');
