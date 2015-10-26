@@ -1,0 +1,7 @@
+{# src/Mysong/CoreBundle/Resources/views/Admin/admin_topnav.html.twig #}
+{% extends 'SonataAdminBundle:Core:user_block.html.twig' %}
+
+{% block user_block %}
+    {{ locale_switcher(null, null, 'MysongCoreBundle:Admin:switcher_links.html.twig') }}
+    {{ parent() }}
+{% endblock %}

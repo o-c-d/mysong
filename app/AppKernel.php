@@ -46,6 +46,8 @@ class AppKernel extends Kernel
             ## Fin du CMF Standard Edition
 			
 			## Mysong
+			new Mysong\CoreBundle\MysongCoreBundle(),
+			new Mysong\TemplateBundle\MysongTemplateBundle(),
 			
 			
             // Sonata EasyExtendsBundle
@@ -75,7 +77,7 @@ class AppKernel extends Kernel
             #new Craue\FormFlowBundle\CraueFormFlowBundle(),
 
             // Remove this Bundle when using the SE as the basis for a new project
-            new Acme\DemoBundle\AcmeDemoBundle(),
+            // new Acme\DemoBundle\AcmeDemoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,6 @@
+services:
+    mysong_core.block.unit:
+        class: Mysong\CoreBundle\Block\UnitBlockService
+        arguments: [mysong_core.block.unit, "@templating"]
+        tags:
+            - { name: sonata.block }

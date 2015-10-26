@@ -120,7 +120,23 @@ cmf_core:
 cmf_routing:
     dynamic:
         templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: AcmeDemoBundle:Page:index.html.twig
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: MysongCoreBundle:Page:index.html.twig
+
+
+# simple cms
+cmf_simple_cms:
+    persistence:
+        phpcr:
+            enabled:          true
+            basepath:         /cms/simple
+            manager_registry: doctrine_phpcr
+            manager_name:     ~
+            document_class:   Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page
+            use_sonata_admin: auto
+            sonata_admin:
+                sort: false
+    use_menu: auto
+#
 
 # Menu Configuration
 knp_menu:
@@ -141,10 +157,14 @@ doctrine_phpcr:
         # ...
         locales:
             en: [fr, es, de]
-            de: [en, fr, es]
             fr: [en, es, de]
+            es: [en, fr, de]
+            de: [en, fr, es]
         locale_fallback: hardcoded
-
+sonata_admin:
+    # ...
+    templates:
+            user_block: MysongCoreBundle:Admin:admin_topnav.html.twig
 # Fin internationalisation
 
 # Cmf Create Configuration

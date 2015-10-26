@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="filter.label_type_contains">
+                <source>filter.label_enabled</source>
+                <target>Enabled</target>
+            </trans-unit>
+            <trans-unit id="label_type_contains">
+                <source>label_type_contains</source>
+                <target>contient</target>
+            </trans-unit>
+            <trans-unit id="label_type_not_contains">
+                <source>label_type_not_contains</source>
+                <target>ne contient pas</target>
+            </trans-unit>
+            <trans-unit id="label_type_equals">
+                <source>label_type_equals</source>
+                <target>egal</target>
+            </trans-unit>
+            <trans-unit id="label_type_not_equals">
+                <source>label_type_not_equals</source>
+                <target>différent</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
