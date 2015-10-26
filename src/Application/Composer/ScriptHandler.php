@@ -20,14 +20,16 @@ class ScriptHandler extends SensioScriptHandler
      * @param $event CommandEvent A instance
      */
     public static function initDbAssets(CommandEvent $event) {
-        $consoleDir = static::getConsoleDir($event, 'create database');
-        static::executeCommand($event, $consoleDir, 'doctrine:phpcr:init:dbal', 300);
-        static::executeCommand($event, $consoleDir, 'doctrine:phpcr:repository:init', 300);
-        static::executeCommand($event, $consoleDir, 'doctrine:phpcr:fixtures:load', 300);
-        static::executeCommand($event, $consoleDir, 'doctrine:schema:update --force', 300);
-        static::executeCommand($event, $consoleDir, 'doctrine:fixtures:load', 300);
-        static::executeCommand($event, $consoleDir, 'assets:install --symlink', 300);
-        static::executeCommand($event, $consoleDir, '--env=prod assetic:dump', 300);
-        static::executeCommand($event, $consoleDir, 'cache:clear --no-warmup', 300);
+        $timeout = 300;
+        $consoleDir = static::getConsoleDir($event, 'initiate database');
+        static::executeCommand($event, $consoleDir, 'doctrine:database:create --if-not-exists --no-debug', $timeout);
+        static::executeCommand($event, $consoleDir, 'doctrine:phpcr:init:dbal --no-debug', $timeout);
+        static::executeCommand($event, $consoleDir, 'doctrine:phpcr:repository:init', $timeout);
+        static::executeCommand($event, $consoleDir, 'doctrine:phpcr:fixtures:load', $timeout);
+        static::executeCommand($event, $consoleDir, 'doctrine:schema:update --force', $timeout);
+        static::executeCommand($event, $consoleDir, 'doctrine:fixtures:load', $timeout);
+        $consoleDir = static::getConsoleDir($event, 'Initiate assets');
+        static::executeCommand($event, $consoleDir, 'assets:install --symlink', $timeout);
+        static::executeCommand($event, $consoleDir, '--env=prod assetic:dump', $timeout);
     }
 }
