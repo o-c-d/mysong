@@ -21,17 +21,23 @@ class AppKernel extends Kernel
             // Symfony CMF Standard Edition Bundles
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
-            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
-            new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
-
-            new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
-            new Sonata\CoreBundle\SonataCoreBundle(),
-
             new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
+            new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
+            new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
+			
+            // Dependencies of the CmfBlockBundle
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+
+            // Dependencies of the CmfMenuBundle
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+			
+			// Internationalisation
+			// Choix de la langue
+			new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
 
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new FOS\RestBundle\FOSRestBundle(),
@@ -40,6 +46,7 @@ class AppKernel extends Kernel
             ## Fin du CMF Standard Edition
 			
 			## Mysong
+			
 			
             // Sonata EasyExtendsBundle
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),

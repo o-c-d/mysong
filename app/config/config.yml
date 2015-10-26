@@ -7,6 +7,11 @@ imports:
 
 parameters:
     locale: fr
+    locales:
+        - fr
+        - en
+        - es
+        - de
     domain_host: web-widget.net.dev
     google_analytics_ua: UA-116502-9
     google_client_id: -
@@ -105,7 +110,8 @@ doctrine_cache:
 # Cmf Configuration
 cmf_core:
     persistence:
-        phpcr: true
+        phpcr:
+            enabled: true
         # if you want another basepath
         # basepath: /custom/basepath
     publish_workflow: false
@@ -119,6 +125,27 @@ cmf_routing:
 # Menu Configuration
 knp_menu:
     twig: true
+#
+
+# Internationalisation
+lunetics_locale:
+    allowed_locales: "%locales%"
+    guessing_order:
+        - router
+        - browser
+cmf_core:
+    multilang:
+        locales: "%locales%"
+doctrine_phpcr:
+    odm:
+        # ...
+        locales:
+            en: [fr, es, de]
+            de: [en, fr, es]
+            fr: [en, es, de]
+        locale_fallback: hardcoded
+
+# Fin internationalisation
 
 # Cmf Create Configuration
 fos_rest:
